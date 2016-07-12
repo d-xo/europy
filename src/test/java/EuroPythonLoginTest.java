@@ -1,5 +1,3 @@
-package com.ontestautomation.graphwalker.tests;
-
 import java.util.concurrent.TimeUnit;
 
 import org.graphwalker.core.condition.TimeDuration;
@@ -16,6 +14,10 @@ import org.testng.annotations.Test;
 public class EuroPythonLoginTest extends ExecutionContext {
 
 	WebDriver driver = null;
+
+	//---------------------------------------------------------------------------------------------
+	// EDGES (Actions)
+	//---------------------------------------------------------------------------------------------
 
 	public void e_StartBrowser() {
 
@@ -50,6 +52,10 @@ public class EuroPythonLoginTest extends ExecutionContext {
 		driver.findElement(By.xpath("//input[@value='Logout 👋']")).click();
 	}
 
+	//---------------------------------------------------------------------------------------------
+	// Vertices (Checks)
+	//---------------------------------------------------------------------------------------------
+
 	public void v_Start() {
 
 	}
@@ -72,41 +78,16 @@ public class EuroPythonLoginTest extends ExecutionContext {
 		Assert.assertEquals(element.getText(),"Logged in 👻");
 	}
 
-	@Test
-	public void fullCoverageTest() {
-
-		// Create an instance of our model
-		Model model = createModel();
-
-		// Build the model (make it immutable) and give it to the execution context
-		this.setModel(model.build());
-
-		// Tell GraphWalker to run the model in a random fashion,
-		// until all vertexes are visited at least once.
-		// This is called the stop condition.
-		long run_time = 20;
-		this.setPathGenerator(new RandomPath(new TimeDuration(run_time, TimeUnit.SECONDS)));
-
-		// Get the starting vertex (v_Start)
-		setNextElement(model.getVertices().get(0));
-
-		//Create the machine that will control the execution
-		Machine machine = new SimpleMachine(this);
-
-		// As long as the stop condition of the path generator is not fulfilled, hasNext will return true.
-		while (machine.hasNextStep()) {
-
-			//Execute the next step of the model.
-			machine.getNextStep();
-		}
-	}
+	//---------------------------------------------------------------------------------------------
+	// Build Model
+	//---------------------------------------------------------------------------------------------
 
 	private Model createModel() {
 
 		// Create a new, empty model
 		Model model = new Model();
 
-		// Create vertexes (nodes)
+		// Create vertices (nodes)
 		Vertex v_Start = new Vertex().setName("v_Start");
 		Vertex v_HomePage = new Vertex().setName("v_HomePage");
 		Vertex v_ErrorPage = new Vertex().setName("v_ErrorPage");
@@ -138,7 +119,7 @@ public class EuroPythonLoginTest extends ExecutionContext {
 			.setSourceVertex(v_LoggedInPage)
 			.setTargetVertex(v_HomePage);
 
-		// Add vertexes to the model
+		// Add vertices to the model
 		model.addVertex(v_Start);
 		model.addVertex(v_HomePage);
 		model.addVertex(v_ErrorPage);
@@ -154,4 +135,37 @@ public class EuroPythonLoginTest extends ExecutionContext {
 
 		return model;
 	}
+
+	//---------------------------------------------------------------------------------------------
+	// Test Code
+	//---------------------------------------------------------------------------------------------
+
+	@Test
+	public void fullCoverageTest() {
+
+		// Create an instance of our model
+		Model model = createModel();
+
+		// Build the model (make it immutable) and give it to the execution context
+		this.setModel(model.build());
+
+		// Tell GraphWalker to run the model in a random fashion,
+		// until all vertices are visited at least once.
+		long run_time = 20;
+		this.setPathGenerator(new RandomPath(new TimeDuration(run_time, TimeUnit.SECONDS)));
+
+		// Get the starting vertex (v_Start)
+		setNextElement(model.getVertices().get(0));
+
+		//Create the machine that will control the execution
+		Machine machine = new SimpleMachine(this);
+
+		// As long as the stop condition of the path generator is not fulfilled, hasNext will return true.
+		while (machine.hasNextStep()) {
+
+			//Execute the next step of the model.
+			machine.getNextStep();
+		}
+	}
+
 }

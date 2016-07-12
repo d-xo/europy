@@ -1,4 +1,11 @@
-<h1>HI!</h1>
+<h1>Login 🤖</h1>
+{% if error %}
+    <h2>Login Error 💩</h2>
+{% endif %}
 <form action="/logged_in">
-    <input type="submit" value="Login">
+    <input type="submit" value="Good Login 😇">
+</form>
+
+<form action="/login_error">
+    <input type="submit" value="Bad Login 👹">
 </form>

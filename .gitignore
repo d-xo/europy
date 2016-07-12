@@ -2,3 +2,4 @@
 .browse.*
 venv/
 .DS_Store
+target/

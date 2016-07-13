@@ -9,7 +9,7 @@
 
 ---
 
-## [fit] Testing requires tooling to cope with
+## [fit] Testing requires tooling that can cope with
 ## [fit] Combinatorial Complexity
 
 ---
@@ -17,7 +17,7 @@
 # Model Based Testing
 
 - Model system as a graph (finite state machine)
-- Generate tests by randomly walking over graph 
+- Generate testcases by randomly walking over graph 
 <br>
 - Tests are more *flexible*
 - Tests find *new bugs*

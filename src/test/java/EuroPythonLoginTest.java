@@ -32,17 +32,7 @@ public class EuroPythonLoginTest extends ExecutionContext {
 		driver.findElement(By.xpath("//input[@value='Bad Login 👹']")).click();
 	}
 
-	public void e_LoginFailedAgain() {
-
-		driver.findElement(By.xpath("//input[@value='Bad Login 👹']")).click();
-	}
-
 	public void e_LoginSucceeded() {
-
-		driver.findElement(By.xpath("//input[@value='Good Login 😇']")).click();
-	}
-
-	public void e_LoginSucceededAfterFailure() {
 
 		driver.findElement(By.xpath("//input[@value='Good Login 😇']")).click();
 	}
@@ -103,7 +93,7 @@ public class EuroPythonLoginTest extends ExecutionContext {
 			.setSourceVertex(v_HomePage)
 			.setTargetVertex(v_ErrorPage);
 		Edge e_LoginFailedAgain = new Edge()
-			.setName("e_LoginFailedAgain")
+			.setName("e_LoginFailed")
 			.setSourceVertex(v_ErrorPage)
 			.setTargetVertex(v_ErrorPage);
 		Edge e_LoginSucceeded = new Edge()
@@ -111,7 +101,7 @@ public class EuroPythonLoginTest extends ExecutionContext {
 			.setSourceVertex(v_HomePage)
 			.setTargetVertex(v_LoggedInPage);
 		Edge e_LoginSucceededAfterFailure = new Edge()
-			.setName("e_LoginSucceededAfterFailure")
+			.setName("e_LoginSucceeded")
 			.setSourceVertex(v_ErrorPage)
 			.setTargetVertex(v_LoggedInPage);
 		Edge e_Logout = new Edge()

@@ -30,7 +30,7 @@
 - Nodes are states to be verified
 - Edges are actions to be taken
 <br>
-- Graphwalker takes a graphml file and generates a `.class` file 
+- Graphwalker takes a graphml file and generates an interface
 
 
 ![right](graph.png)

@@ -25,10 +25,6 @@
 
 ---
 
-## [fit] Demonstration :information_desk_person:
-
----
-
 ## Building the Model
 
 - Nodes are states to be verified

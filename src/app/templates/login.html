@@ -1,11 +1,32 @@
-<h1 id="title">Login 🤖</h1>
-{% if error %}
-    <h2 id="error">Login Error 💩</h2>
-{% endif %}
-<form action="/logged_in">
-    <input type="submit" value="Good Login 😇">
-</form>
+{% extends "base.html" %}
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <h1 class="text-center" id="title">Login 🤖</h1>
+                {% if error %}
+                    <div class="alert alert-danger">
+                        <p class="text-center lead" id="error">Login Error 💩</p>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="col-md-4"></div>
+        </div>
 
-<form action="/login_error">
-    <input type="submit" value="Bad Login 👹">
-</form>
+        <div class="row">
+            <div class="col-md-5"></div>
+            <div class="col-md-1">
+                <form action="/logged_in">
+                    <input type="submit" class="btn btn-success center-block" value="Good Login 😇">
+                </form>
+            </div>
+            <div class="col-md-1">
+                <form action="/login_error">
+                    <input type="submit" class="btn btn-danger center-block" value="Bad Login 👹">
+                </form>
+            </div>
+            <div class="col-md-5"></div>
+        </div>
+    </div>
+{% endblock %}

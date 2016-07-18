@@ -1,4 +1,24 @@
-<h1 id="title">Logged in 👻</h1>
-<form action="/">
-    <input type="submit" value="Logout 👋">
-</form>
+{% extends "base.html" %}
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <h1 class="text-center" id="title">Logged in 👻</h1>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <form action="/">
+                    <input type="submit" class="btn btn-primary center-block" value="Logout 👋">
+                </form>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+
+
+    </div>
+{% endblock %}

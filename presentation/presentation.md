@@ -9,8 +9,9 @@
 
 ---
 
-## [fit] Testing requires tooling that can cope with
-## [fit] Combinatorial Complexity
+## [fit] How can we deal with
+## [fit] Complexity
+## [fit] When Testing
 
 ---
 

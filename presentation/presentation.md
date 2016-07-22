@@ -3,26 +3,15 @@
 
 ---
 
-# Native Instruments & Maschine
-
-![original](maschine.jpg)
-
----
-
-## [fit] How can we deal with
-## [fit] Complexity
-## [fit] When Testing
-
----
-
 # Model Based Testing
 
 - Model system as a graph (finite state machine)
 - Generate testcases by walking over graph 
 <br>
-- Tests are more *flexible*
-- Tests find *new bugs*
-- Tests may not always be the same
+- *More declarative*
+- *Reduced coupling*
+- *Tests find new bugs*
+- **Tests may not always be the same**
 
 ---
 
@@ -30,12 +19,21 @@
 
 - Nodes are states to be verified
 - Edges are actions to be taken
-<br>
-- Graphwalker takes a graphml file and generates an interface
+<br><br>---------------------------<br><br>
+- :disappointed: Java library
+- graphml -> interface file
 
 
 ![right](graph.png)
 
 ---
 
-## [fit]Questions? :pray:
+## [fit]Thanks! :pray:
+David Terry | Native Instruments
+**david.terry@native-instruments.de**
+*@xwvvvvwx*
+<br>
+:blush: Come and say Hi
+:information_desk_person: See the code: **https://github.com/xwvvvvwx/europy**
+:money_with_wings: We're hiring
+
